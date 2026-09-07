@@ -1,6 +1,7 @@
 package com.scheduler.email.data.dtos.Response;
 
 import com.scheduler.email.data.entities.auth.EndpointPermission;
+import com.scheduler.email.services.impl.EndpointsPermissionService;
 import lombok.*;
 import org.springframework.stereotype.Component;
 
@@ -11,6 +12,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class EndPointResponse {
     private final PermissionsResponse permissionsResponse;
+    private final EndpointsPermissionService endpointsPermissionService;
 
     @Data
     @Builder
@@ -20,7 +22,7 @@ public class EndPointResponse {
         private UUID id;
         private String httpMethod;
         private String pathPattern;
-        private UUID permissionId;
+        private String permission;
         private Boolean isPublic;
         private Boolean enabled;
     }
@@ -63,7 +65,7 @@ public class EndPointResponse {
                 .id(endpointPermission.getId())
                 .httpMethod(endpointPermission.getHttpMethod())
                 .pathPattern(endpointPermission.getPathPattern())
-                .permissionId(permissionId)
+                .permission(endpointsPermissionService.getPermissionName(permissionId))
                 .isPublic(endpointPermission.getIsPublic())
                 .enabled(endpointPermission.getEnabled())
                 .build();
