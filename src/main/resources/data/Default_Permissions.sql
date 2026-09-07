@@ -1,0 +1,58 @@
+INSERT INTO permissions (name, resource, action, description)
+VALUES
+    -- ── Users ────────────────────────────────────────────────────
+    ('USERS:CREATE', 'USERS', 'CREATE', 'Naya user account create karna'),
+    ('USERS:READ', 'USERS', 'READ', 'User detail by ID dekhna'),
+    ('USERS:UPDATE', 'USERS', 'UPDATE', 'User information update karna'),
+    ('USERS:DELETE', 'USERS', 'DELETE', 'User soft-delete karna'),
+    ('USERS:SEARCH', 'USERS', 'SEARCH', 'Users list/search karna'),
+    ('USERS:ENABLE', 'USERS', 'ENABLE', 'User account enable karna'),
+    ('USERS:DISABLE', 'USERS', 'DISABLE', 'User account disable karna'),
+    ('USERS:CHANGE_PASSWORD', 'USERS', 'CHANGE_PASSWORD', 'Kisi bhi user ka password change karna'),
+    ('USERS:STATS', 'USERS', 'STATS', 'Users statistics dekhna'),
+    -- ── Roles ────────────────────────────────────────────────────
+    ('ROLES:CREATE', 'ROLES', 'CREATE', 'Naya role create karna'),
+    ('ROLES:READ', 'ROLES', 'READ', 'Role detail by ID dekhna'),
+    ('ROLES:UPDATE', 'ROLES', 'UPDATE', 'Role update karna'),
+    ('ROLES:DELETE', 'ROLES', 'DELETE', 'Role soft-delete karna'),
+    ('ROLES:SEARCH', 'ROLES', 'SEARCH', 'Roles list/search karna'),
+    ('ROLES:ENABLE', 'ROLES', 'ENABLE', 'Role enable karna'),
+    ('ROLES:DISABLE', 'ROLES', 'DISABLE', 'Role disable karna'),
+    ('ROLES:STATS', 'ROLES', 'STATS', 'Roles statistics dekhna'),
+    -- ── Permissions (meta) ───────────────────────────────────────
+    ('PERMISSIONS:CREATE', 'PERMISSIONS', 'CREATE', 'Naya permission create karna'),
+    ('PERMISSIONS:READ', 'PERMISSIONS', 'READ', 'Permission detail by ID dekhna'),
+    ('PERMISSIONS:UPDATE', 'PERMISSIONS', 'UPDATE', 'Permission update karna'),
+    ('PERMISSIONS:DELETE', 'PERMISSIONS', 'DELETE', 'Permission soft-delete karna'),
+    ('PERMISSIONS:SEARCH', 'PERMISSIONS', 'SEARCH', 'Permissions list/search karna'),
+    ('PERMISSIONS:ENABLE', 'PERMISSIONS', 'ENABLE', 'Permission enable karna'),
+    ('PERMISSIONS:DISABLE', 'PERMISSIONS', 'DISABLE', 'Permission disable karna'),
+    ('PERMISSIONS:READ_ACTIVE', 'PERMISSIONS', 'READ_ACTIVE', 'Sabhi active permissions ki list dekhna'),
+    ('PERMISSIONS:STATS', 'PERMISSIONS', 'STATS', 'Permissions statistics dekhna'),
+    -- ── Endpoint Permissions (dynamic RBAC registry) ─────────────
+    ('ENDPOINT_PERMISSIONS:CREATE', 'ENDPOINT_PERMISSIONS', 'CREATE', 'Naya endpoint-permission mapping create karna'),
+    ('ENDPOINT_PERMISSIONS:READ', 'ENDPOINT_PERMISSIONS', 'READ', 'Endpoint-permission detail by ID dekhna'),
+    ('ENDPOINT_PERMISSIONS:UPDATE', 'ENDPOINT_PERMISSIONS', 'UPDATE', 'Endpoint-permission mapping update karna'),
+    ('ENDPOINT_PERMISSIONS:DELETE', 'ENDPOINT_PERMISSIONS', 'DELETE', 'Endpoint-permission mapping soft-delete karna'),
+    ('ENDPOINT_PERMISSIONS:SEARCH', 'ENDPOINT_PERMISSIONS', 'SEARCH', 'Endpoint-permission mappings search karna'),
+    ('ENDPOINT_PERMISSIONS:ENABLE', 'ENDPOINT_PERMISSIONS', 'ENABLE', 'Endpoint-permission enable karna'),
+    ('ENDPOINT_PERMISSIONS:DISABLE', 'ENDPOINT_PERMISSIONS', 'DISABLE', 'Endpoint-permission disable karna'),
+    ('ENDPOINT_PERMISSIONS:STATS', 'ENDPOINT_PERMISSIONS', 'STATS', 'Endpoint-permission statistics dekhna'),
+    -- ── Notification Inbox ────────────────────────────────────────
+    ('NOTIFICATIONS:READ', 'NOTIFICATIONS', 'READ', 'Apna notification inbox dekhna'),
+    ('NOTIFICATIONS:COUNT_UNREAD', 'NOTIFICATIONS', 'COUNT_UNREAD', 'Unread notification count dekhna'),
+    ('NOTIFICATIONS:MARK_READ', 'NOTIFICATIONS', 'MARK_READ', 'Ek notification mark-as-read karna'),
+    ('NOTIFICATIONS:MARK_ALL_READ', 'NOTIFICATIONS', 'MARK_ALL_READ', 'Sabhi notifications mark-as-read karna'),
+    -- ── Contact / Support ─────────────────────────────────────────
+    ('CONTACT:READ', 'CONTACT', 'READ', 'Contact request detail by ID dekhna'),
+    ('CONTACT:UPDATE', 'CONTACT', 'UPDATE', 'Contact request update karna'),
+    ('CONTACT:SEARCH', 'CONTACT', 'SEARCH', 'Contact requests search/list karna'),
+    ('CONTACT:MARK_IN_PROGRESS', 'CONTACT', 'MARK_IN_PROGRESS', 'Contact mark-as-in-progress karna'),
+    ('CONTACT:MARK_RESOLVED', 'CONTACT', 'MARK_RESOLVED', 'Contact mark-as-resolved karna'),
+    ('CONTACT:MARK_SPAM', 'CONTACT', 'MARK_SPAM', 'Contact mark-as-spam karna'),
+    ('CONTACT:DELETE', 'CONTACT', 'DELETE', 'Contact soft-delete karna'),
+    ('CONTACT:STATS', 'CONTACT', 'STATS', 'Contact requests statistics dekhna'),
+    -- ── Configuration ─────────────────────────────────────────────
+    ('CONFIG:UPDATE_ALERT', 'CONFIG', 'UPDATE_ALERT', 'Application alert banner content update karna'),
+    ('CONFIG:TOGGLE_ALERT', 'CONFIG', 'TOGGLE_ALERT', 'Application alert banner show/hide toggle karna'),
+    ('CONFIG:UPDATE_APP_CONFIG', 'CONFIG', 'UPDATE_APP_CONFIG', 'Application config (fees, rules) update karna');
